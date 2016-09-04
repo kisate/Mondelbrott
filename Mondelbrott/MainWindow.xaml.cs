@@ -51,11 +51,11 @@ namespace Mondelbrott
                 if (c.x * c.x + c.y * c.y >= 4)
                 {
                     if (i <= 500) allDots.Add(new KeyValuePair<Dot, int>(c, 0));
-                    if (500 <= i || i < 600) allDots.Add(new KeyValuePair<Dot, int>(c, 1));
-                    if (600 <= i || i < 700) allDots.Add(new KeyValuePair<Dot, int>(c, 2));
-                    if (700 <= i || i < 800) allDots.Add(new KeyValuePair<Dot, int>(c, 3));
-                    if (800 <= i || i < 900) allDots.Add(new KeyValuePair<Dot, int>(c, 4));
-                    if (900 <= i || i < 1000) allDots.Add(new KeyValuePair<Dot, int>(c, 5));
+                    if (500 <= i && i < 600) allDots.Add(new KeyValuePair<Dot, int>(c, 1));
+                    if (600 <= i && i < 700) allDots.Add(new KeyValuePair<Dot, int>(c, 2));
+                    if (700 <= i && i < 800) allDots.Add(new KeyValuePair<Dot, int>(c, 3));
+                    if (800 <= i && i < 900) allDots.Add(new KeyValuePair<Dot, int>(c, 4));
+                    if (900 <= i && i < 1000) allDots.Add(new KeyValuePair<Dot, int>(c, 5));
                     break;
                 }
             }
