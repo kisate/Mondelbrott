@@ -6,12 +6,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*">
             </RowDefinition>
-            <RowDefinition Height="32">
+            <RowDefinition Height="32" >
             </RowDefinition>
         </Grid.RowDefinitions>
-        <Border Background="Blue" Grid.Row="0" SizeChanged="image1_SizeChanged">
-        <StackPanel HorizontalAlignment="Left" x:Name="imgCanvas" Margin="0" VerticalAlignment="Top" />
-            </Border>
+            <Canvas HorizontalAlignment="Stretch" x:Name="imgCanvas" VerticalAlignment="Stretch" Background="Blue" SizeChanged="image1_SizeChanged" Margin="2"/>
         <StatusBar Grid.Row="1">
             <Label Height="32" x:Name="lblCoordinates"/>
         </StatusBar>

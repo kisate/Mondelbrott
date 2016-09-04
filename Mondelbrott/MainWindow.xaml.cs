@@ -21,15 +21,6 @@ namespace Mondelbrott
     {
         public List<KeyValuePair<Dot, int>> allDots;
 
-        public class Dot
-        {
-            public double x, y;
-            public Dot(double _x, double _y)
-            {
-                x = _x;
-                y = _y;
-            }
-        }
         public double p, q;
 
         public Dot CalculateNext(Dot n)
