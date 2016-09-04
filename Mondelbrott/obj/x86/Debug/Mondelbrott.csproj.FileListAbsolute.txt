@@ -1,0 +1,11 @@
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\App.g.cs
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\Mondelbrott_MarkupCompile.cache
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\MainWindow.baml
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\Mondelbrott.g.resources
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\Mondelbrott.Properties.Resources.resources
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\Mondelbrott.csproj.GenerateResource.Cache
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\bin\Debug\Mondelbrott.exe
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\bin\Debug\Mondelbrott.pdb
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\Mondelbrott.exe
+C:\Users\Dima\Documents\GitHub\Mondelbrott\Mondelbrott\obj\x86\Debug\Mondelbrott.pdb
