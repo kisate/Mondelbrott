@@ -21,7 +21,7 @@ namespace Mondelbrott
     {
         public List<KeyValuePair<Dot, int>> allDots;
 
-        public double p, q, ratio;
+        public double p, q, xratio, yratio;
 
         public Dot CalculateNext(Dot n)
         {
@@ -72,7 +72,8 @@ namespace Mondelbrott
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            xratio = 2 / imgCanvas.ActualWidth;
+            yratio = 2 / imgCanvas.ActualHeight;
         }
 
     }
