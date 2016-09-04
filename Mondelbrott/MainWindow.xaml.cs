@@ -76,7 +76,8 @@ namespace Mondelbrott
             xratio = 2 / imgCanvas.ActualWidth;
             yratio = 2 / imgCanvas.ActualHeight;
             p = -2;
-            q 
+            q = -2;
+
         }
 
     }
