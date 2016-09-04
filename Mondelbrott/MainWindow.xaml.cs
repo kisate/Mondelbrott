@@ -21,7 +21,7 @@ namespace Mondelbrott
     {
         public List<KeyValuePair<Dot, int>> allDots;
 
-        public double p, q;
+        public double p, q, ratio;
 
         public Dot CalculateNext(Dot n)
         {
@@ -68,6 +68,11 @@ namespace Mondelbrott
         private void image1_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             lblCoordinates.Content = string.Format("{0}x{1}", e.NewSize.Width, e.NewSize.Height);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
     }

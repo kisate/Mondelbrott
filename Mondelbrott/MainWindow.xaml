@@ -4,14 +4,16 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*">
             </RowDefinition>
             <RowDefinition Height="32" >
             </RowDefinition>
         </Grid.RowDefinitions>
-            <Canvas HorizontalAlignment="Stretch" x:Name="imgCanvas" VerticalAlignment="Stretch" Background="Blue" SizeChanged="image1_SizeChanged" Margin="2"/>
-        <StatusBar Grid.Row="1">
+            <Canvas Grid.Row="1" HorizontalAlignment="Stretch" x:Name="imgCanvas" VerticalAlignment="Stretch" Background="Blue" SizeChanged="image1_SizeChanged" Margin="2"/>
+        <StatusBar Grid.Row="2">
             <Label Height="32" x:Name="lblCoordinates"/>
         </StatusBar>
+        <Button Grid.Row="0" Click="Button_Click" Content="Press me"/>
     </Grid>
 </Window>
