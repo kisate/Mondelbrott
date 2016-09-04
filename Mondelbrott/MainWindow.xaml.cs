@@ -57,6 +57,7 @@ namespace Mondelbrott
 
         public void ChooseNextCoord()
         {
+
         }
 
         public MainWindow()
