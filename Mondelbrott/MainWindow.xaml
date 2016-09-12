@@ -4,16 +4,35 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="32"/>
             <RowDefinition Height="*">
             </RowDefinition>
             <RowDefinition Height="32" >
-            </RowDefinition>
+            </RowDefinition>            
         </Grid.RowDefinitions>
-            <Canvas Grid.Row="1" HorizontalAlignment="Stretch" x:Name="imgCanvas" VerticalAlignment="Stretch" Background="Blue" SizeChanged="image1_SizeChanged" Margin="2"/>
+        <Border Grid.Row="1" Background="LightSteelBlue" Name="imageBorder" SizeChanged="image1_SizeChanged"> 
+            <Image Name="imageDisplay" Stretch="None" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Border>
+        <!--<Canvas Grid.Row="1" HorizontalAlignment="Stretch" x:Name="imgCanvas" VerticalAlignment="Stretch" Background="Blue" SizeChanged="image1_SizeChanged" Margin="2"/>-->
         <StatusBar Grid.Row="2">
-            <Label Height="32" x:Name="lblCoordinates"/>
+            <Label Height="24" x:Name="lblCoordinates"/>
         </StatusBar>
-        <Button Grid.Row="0" Click="Button_Click" Content="Press me"/>
+        <ToolBarPanel Grid.Row="0">
+            <ToolBar>
+                <Button Click="Button_Click" Content="Press me" HorizontalAlignment="Center" />
+                <Separator />
+                <Label Content="Min X:" />
+                <TextBox Name="txMinX">-2.0</TextBox>
+                <Separator />
+                <Label Content="Min Y:" />
+                <TextBox Name="txMinY">-2.0</TextBox>
+                <Separator />
+                <Label Content="Size:"/>
+                <TextBox Name="txSize"  >4.0</TextBox>
+                <Separator />
+                <Label Content="Iterations:" />
+                <TextBox Name="txIterations">1000</TextBox>
+            </ToolBar>
+        </ToolBarPanel>
     </Grid>
 </Window>
