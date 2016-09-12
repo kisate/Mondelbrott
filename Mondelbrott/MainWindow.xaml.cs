@@ -225,8 +225,5 @@ namespace Mondelbrott
                 DoAll();
             }
         }
-
-        
-
     }
 }
