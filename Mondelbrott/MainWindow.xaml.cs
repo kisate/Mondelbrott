@@ -23,6 +23,10 @@ namespace Mondelbrott
         private List<KeyValuePair<Dot, int>> allDots;
 
         public double p, q ;//, xratio, yratio;
+        double xmin, ymin, size, ratio;
+        int iterations;
+        bool lmbPressed;
+        Point oldMousePosition;
 
         public Dot CalculateNext(Dot n)
         {
@@ -79,18 +83,8 @@ namespace Mondelbrott
             lblCoordinates.Content = string.Format("{0}x{1}", e.NewSize.Width, e.NewSize.Height);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DoAll()
         {
-//<<<<<<< HEAD
-//            xratio = 2 / imgCanvas.ActualWidth;
-//            yratio = 2 / imgCanvas.ActualHeight;
-//            p = -2;
-//            q = -2;
-
-//=======
-            //xratio = 2 / imgCanvas.ActualWidth;
-            //yratio = 2 / imgCanvas.ActualHeight;
-
             var width = Math.Floor(imageBorder.ActualWidth);
             var height = (int)Math.Floor(imageBorder.ActualHeight);
             var colors = new Color[] { 
@@ -111,15 +105,9 @@ namespace Mondelbrott
                 Colors.Aquamarine,
                 Colors.White 
             };
-                        
-            double 
-                xmin = XmlConvert.ToDouble(txMinX.Text),
-                ymin = XmlConvert.ToDouble(txMinY.Text),
-                size = XmlConvert.ToDouble(txSize.Text), 
-                p, q, ratio;
 
-            int iterations = int.Parse(txIterations.Text);
-
+            double
+                p, q;
             // Если просто поделить квадрат (4;4) на ширину высоту экрана, то картинка не сохранит пропорции (не будет квадрата)
             // Можно по разному это решать, я предлагаю dfhbfyn - выбрать меньший из размеров и использовать его для определения ratio
             // тогда 2й размер вычисляется
@@ -156,8 +144,89 @@ namespace Mondelbrott
                     _qg.WritePixel(x, height - 1 - y, colorIndex);
                 }
             }
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+//<<<<<<< HEAD
+//            xratio = 2 / imgCanvas.ActualWidth;
+//            yratio = 2 / imgCanvas.ActualHeight;
+//            p = -2;
+//            q = -2;
+
+//=======
+            //xratio = 2 / imgCanvas.ActualWidth;
+            //yratio = 2 / imgCanvas.ActualHeight;
+
+            xmin = XmlConvert.ToDouble(txMinX.Text);
+            ymin = XmlConvert.ToDouble(txMinY.Text);
+            size = XmlConvert.ToDouble(txSize.Text);
+
+            iterations = int.Parse(txIterations.Text);
+
+            DoAll();
+            
+            
 //>>>>>>> origin/master
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            xmin *= 0.9;
+            txMinX.Text = xmin.ToString("C1");
+            ymin *= 0.9;
+            txMinY.Text = ymin.ToString("C1");
+            size *= 0.81;
+            txSize.Text = size.ToString("C1");
+            DoAll();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            xmin /= 0.9;
+            txMinX.Text = xmin.ToString("C1");
+            ymin /= 0.9;
+            txMinY.Text = ymin.ToString("C1");
+            size /= 0.81;
+            txSize.Text = size.ToString("C1");
+            DoAll();
+        }
+
+        private void imageBorder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            lmbPressed = true;
+            oldMousePosition = e.GetPosition(this);
+            imageBorder_MouseMove(this.imageBorder, e);
+        }
+
+        private void imageBorder_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (lmbPressed)
+            {
+                xmin -= (e.GetPosition(this).X - oldMousePosition.X)*ratio;
+                txMinX.Text = xmin.ToString("C1");
+                ymin -= (e.GetPosition(this).Y - oldMousePosition.Y)*ratio;
+                txMinY.Text = ymin.ToString("C1");
+                oldMousePosition = e.GetPosition(this);
+            }
+        }
+
+        private void imageBorder_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (lmbPressed)
+            {
+                xmin -= (e.GetPosition(this).X - oldMousePosition.X)*ratio;
+                txMinX.Text = xmin.ToString("C1");
+                ymin -= (e.GetPosition(this).Y - oldMousePosition.Y)*ratio;
+                txMinY.Text = ymin.ToString("C1");
+                oldMousePosition = e.GetPosition(this);
+                lmbPressed = false;
+                DoAll();
+            }
+        }
+
+        
 
     }
 }
