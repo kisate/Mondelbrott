@@ -22,7 +22,7 @@
                 <Button Click="Button_Click" Content="Press me" HorizontalAlignment="Center" />
                 <Separator />
                 <Label Content="Min X:" />
-                <TextBox Name="txMinX">-2.0</TextBox>
+                <TextBox Name="txMinX" >-2.0</TextBox>
                 <Separator />
                 <Label Content="Min Y:" />
                 <TextBox Name="txMinY">-2.0</TextBox>

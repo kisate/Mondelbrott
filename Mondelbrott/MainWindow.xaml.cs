@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Xml;
 namespace Mondelbrott
 {
     /// <summary>
@@ -66,7 +66,7 @@ namespace Mondelbrott
 
         public void ChooseNextCoord()
         {
-            if ()
+            if (true);
         }
 
         public MainWindow()
@@ -81,13 +81,13 @@ namespace Mondelbrott
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-            xratio = 2 / imgCanvas.ActualWidth;
-            yratio = 2 / imgCanvas.ActualHeight;
-            p = -2;
-            q = -2;
+//<<<<<<< HEAD
+//            xratio = 2 / imgCanvas.ActualWidth;
+//            yratio = 2 / imgCanvas.ActualHeight;
+//            p = -2;
+//            q = -2;
 
-=======
+//=======
             //xratio = 2 / imgCanvas.ActualWidth;
             //yratio = 2 / imgCanvas.ActualHeight;
 
@@ -113,9 +113,9 @@ namespace Mondelbrott
             };
                         
             double 
-                xmin = double.Parse(txMinX.Text), 
-                ymin = double.Parse(txMinY.Text), 
-                size = double.Parse(txSize.Text), 
+                xmin = XmlConvert.ToDouble(txMinX.Text),
+                ymin = XmlConvert.ToDouble(txMinY.Text),
+                size = XmlConvert.ToDouble(txSize.Text), 
                 p, q, ratio;
 
             int iterations = int.Parse(txIterations.Text);
@@ -156,7 +156,7 @@ namespace Mondelbrott
                     _qg.WritePixel(x, height - 1 - y, colorIndex);
                 }
             }
->>>>>>> origin/master
+//>>>>>>> origin/master
         }
 
     }
